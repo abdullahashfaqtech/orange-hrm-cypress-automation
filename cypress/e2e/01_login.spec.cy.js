@@ -28,6 +28,11 @@ describe('Sign_In Screen all Test Cases', () => {
         var_Login_Page.clickLoginBtn()
     })
 
-    it('Sign_In with Invalid Credentials', () => {
-    } )
+    it('Move to the Admin Tab', () => {
+        
+        var_Login_Page.enterUsername('Admin')
+        var_Login_Page.enterPassword('admin123')
+        var_Login_Page.clickLoginBtn()
+        var_move_admin_tab.move_to_admin()
+    })
 })
