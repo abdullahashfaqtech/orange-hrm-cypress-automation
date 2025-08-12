@@ -18,7 +18,7 @@ class Loginpage {
     login(username, password){
 
         this.enterUsername(username);
-        this.enterPassword(password)
+        this.enterPassword(password);
         this.clickLoginBtn();
     }
 

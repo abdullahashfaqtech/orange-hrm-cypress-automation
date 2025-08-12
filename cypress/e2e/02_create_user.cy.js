@@ -1,6 +1,6 @@
 import { Loginpage } from "./POM_Pages/LoginPage.cy";
 import { moveBetweenTabs } from "./pom_pages/move_between_tabs.cy";
-import { addEmployee } from "./pom_pages/AdminPage.cy";
+
 
 
 const var_Login_Page = new Loginpage()
@@ -21,9 +21,7 @@ describe('Add_Employee_to_system', () => {
         var_Login_Page.enterPassword('admin123')
         var_Login_Page.clickLoginBtn()
         var_move_admin_tab.move_to_admin()
-
-
- })
+    })
 
     it('Add user', () => {
 
