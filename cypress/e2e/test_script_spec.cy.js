@@ -45,7 +45,10 @@ describe('Orange HRM Complete Automation', () => {
                 data.firstname,
                 data.middlename,
                 data.lastname,
-                data.employeeid
+                data.employeeid,
+                data.pimusername,
+                data.pimpassword,
+                data.pimconfirmpassword
             )
         })
 

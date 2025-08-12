@@ -1,12 +1,27 @@
 class PimPage {
 
-    move_to_pim_page = ':nth-child(2) > .oxd-main-menu-item'
-    click_on_the_add_pim_btn = '.orangehrm-header-container > .oxd-button'
-    add_pim_first_name = '.--name-grouped-field > :nth-child(1) > :nth-child(2) > .oxd-input'
-    add_pim_middle_name = ':nth-child(2) > :nth-child(2) > .oxd-input'
-    add_pim_last_name = ':nth-child(3) > :nth-child(2) > .oxd-input'
-    add_employee_id = '.oxd-grid-item > .oxd-input-group > :nth-child(2) > .oxd-input'
-    create_login_details_toggle = '.oxd-switch-input'
+    move_to_pim_page = ':nth-child(2) > .oxd-main-menu-item';
+    click_on_the_add_pim_btn = '.orangehrm-header-container > .oxd-button';
+    add_pim_first_name = '.--name-grouped-field > :nth-child(1) > :nth-child(2) > .oxd-input';
+    add_pim_middle_name = ':nth-child(2) > :nth-child(2) > .oxd-input';
+    add_pim_last_name = ':nth-child(3) > :nth-child(2) > .oxd-input';
+    add_employee_id = '.oxd-grid-item > .oxd-input-group > :nth-child(2) > .oxd-input';
+    create_login_details_toggle = '.oxd-switch-input';
+    add_pim_username = ':nth-child(4) > .oxd-grid-2 > :nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-input';
+    add_pim_password = '.user-password-cell > .oxd-input-group > :nth-child(2) > .oxd-input';
+    add_pim_confirm_password = '.oxd-grid-2 > :nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input';
+    save_pim_employee_btn = '.oxd-button--secondary';
+    add_other_id = ':nth-child(3) > :nth-child(1) > :nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input';
+    add_driver_licence_number = ':nth-child(2) > :nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-input';
+    add_license_expiry_date = ':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-date-wrapper > .oxd-date-input > .oxd-input';
+    open_nationality_dropdown = ':nth-child(5) > :nth-child(1) > :nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-select-wrapper > .oxd-select-text > .oxd-select-text--after > .oxd-icon';
+    select_specific_nationality = '.oxd-select-option';
+    open_marital_status_dropdown = ':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-select-wrapper > .oxd-select-text > .oxd-select-text--after > .oxd-icon';
+    select_specific_marital_status = '.oxd-select-option';
+    Add_date_of_birth = ':nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-date-wrapper > .oxd-date-input > .oxd-input';
+    select_specific_gender = ':nth-child(1) > :nth-child(2) > .oxd-radio-wrapper > label';
+    save_the_personal_info = ':nth-child(1) > .oxd-form > .oxd-form-actions > .oxd-button';
+
 
     moveToPim() {
 
@@ -44,13 +59,97 @@ class PimPage {
         cy.get(this.create_login_details_toggle).click()
     }
 
-    createPimEmployee(firstname, middlename, lastname, employeeid) {
+    pimUsername(pimusername) {
+
+        cy.get(this.add_pim_username).type(pimusername)
+    }
+
+    pimPassword(pimpassword) {
+
+        cy.get(this.add_pim_password).type(pimpassword)
+    }
+
+    pimConfirmPassword(pimconfirmpassword) {
+
+        cy.get(this.add_pim_confirm_password).type(pimconfirmpassword)
+
+    }
+
+    pimSaveEmployee() {
+
+        cy.get(this.save_pim_employee_btn).click()
+
+    }
+
+    pimAddOtherId(otherid) {
+
+        cy.get(this.add_other_id).type(otherid)
+
+    }
+
+    pimAddLicenseNumber(licensenumber) {
+
+        cy.get(this.add_driver_licence_number).type(licensenumber)
+
+    }
+
+    pimLicenseExpiry(licenseexpiry) {
+
+        cy.get(this.add_license_expiry_date).type(licenseexpiry)
+
+    }
+
+    pimSelectNationality(selectnationality) {
+
+        cy.get(this.open_nationality_dropdown).eq(0).click()
+        cy.get(this.select_specific_nationality, selectnationality).click()
+
+    }
+
+    pimSelectMaritalStatus(maritalstatus) {
+
+        cy.get(this.open_marital_status_dropdown).eq(0).click()
+        cy.get(this.select_specific_marital_status, maritalstatus).click()
+
+    }
+
+    pimAddDateOfBirth(dateofbirth) {
+
+        cy.get(this.Add_date_of_birth).type(dateofbirth)
+
+    }
+
+    pimSelectGender() {
+
+        cy.get(this.select_specific_gender).click()
+
+    }
+
+    pimSavePersonalInfo() {
+
+        cy.get(this.save_the_personal_info).click()
+
+    }
+
+    createPimEmployee(firstname, middlename, lastname, employeeid, pimusername, pimpassword, pimconfirmpassword, otherid, licensenumber, licenseexpiry, dateofbirth) {
 
         this.pimFirstName(firstname);
         this.pimMiddleName(middlename);
         this.pimLastName(lastname);
         this.pimEmployeeId(employeeid);
         this.loginDetailsToggle();
+        this.pimUsername(pimusername);
+        this.pimPassword(pimpassword);
+        this.pimConfirmPassword(pimconfirmpassword);
+        this.pimSaveEmployee();
+        this.pimAddOtherId(otherid);
+        this.pimAddLicenseNumber(licensenumber);
+        this.pimLicenseExpiry(licenseexpiry);
+        this.pimSelectNationality('Pakistani')
+        this.pimSelectMaritalStatus('Single');
+        this.pimAddDateOfBirth(dateofbirth);
+        this.pimSelectGender();
+    
     }
 
 }

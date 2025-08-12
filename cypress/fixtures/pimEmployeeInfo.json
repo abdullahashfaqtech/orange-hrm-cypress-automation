@@ -2,5 +2,8 @@
     "firstname": "Muhammad",
     "middlename": "Abdullah",
     "lastname": "Ashfaq",
-    "employeeid": "4597"
+    "employeeid": "4597",
+    "pimusername": "abdullahashfaq123",
+    "pimpassword": "Abdul@123",
+    "pimconfirmpassword": "Abdul@123"
 }
