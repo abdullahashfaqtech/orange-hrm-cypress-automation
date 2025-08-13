@@ -3,7 +3,12 @@
     "middlename": "Abdullah",
     "lastname": "Ashfaq",
     "employeeid": "4597",
-    "pimusername": "abdullahashfaq123",
+    "pimusername": "abdullahashfaq12345",
     "pimpassword": "Abdul@123",
-    "pimconfirmpassword": "Abdul@123"
+    "pimconfirmpassword": "Abdul@123",
+    "otherid": "1255",
+    "licensenumber": "89236511782393",
+    "licenseexpiry": "2027-08-10",
+    "dateofbirth": "1995-10-12"
+
 }

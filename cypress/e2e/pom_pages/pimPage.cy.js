@@ -78,12 +78,13 @@ class PimPage {
     pimSaveEmployee() {
 
         cy.get(this.save_pim_employee_btn).click()
+        cy.wait(10000)
 
     }
 
     pimAddOtherId(otherid) {
 
-        cy.get(this.add_other_id).type(otherid)
+        cy.get(this.add_other_id).should('be.visible').type(otherid);
 
     }
 

@@ -33,7 +33,7 @@ describe('Orange HRM Complete Automation', () => {
         });
     });
 
-    it("Add Employee Profile on Pim Page", () => {
+    it.only("Add Employee Profile on Pim Page", () => {
 
         var_add_employee_on_pim_page.moveToPim()
         var_add_employee_on_pim_page.addPimBtn()
@@ -48,9 +48,15 @@ describe('Orange HRM Complete Automation', () => {
                 data.employeeid,
                 data.pimusername,
                 data.pimpassword,
-                data.pimconfirmpassword
+                data.pimconfirmpassword,
+                data.otherid,
+                data.licensenumber,
+                data.licenseexpiry,
+                data.dateofbirth
             )
         })
+
+      
 
     })
 
