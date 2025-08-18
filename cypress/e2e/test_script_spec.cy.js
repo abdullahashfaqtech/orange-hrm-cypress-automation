@@ -1,11 +1,11 @@
-import Loginpage from "./POM_Pages/LoginPage.cy";
-import AdminPage from "./POM_Pages/AdminPage.cy";
+import Loginpage from "./pom_pages/LoginPage.cy";
+import addEmployee from "./pom_pages/adminPage.cy";
 import PimPage from "./pom_pages/pimPage.cy";
 
 describe('Orange HRM Complete Automation', () => {
 
     const var_Login_Page = new Loginpage();
-    const var_move_admin_tab = new AdminPage();
+    const var_move_admin_tab = new addEmployee();
     const var_add_employee_on_pim_page = new PimPage();
 
     beforeEach(() => {

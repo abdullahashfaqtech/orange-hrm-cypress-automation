@@ -14,9 +14,10 @@ class PimPage {
     add_other_id = ':nth-child(3) > :nth-child(1) > :nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input';
     add_driver_licence_number = ':nth-child(2) > :nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-input';
     add_license_expiry_date = ':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-date-wrapper > .oxd-date-input > .oxd-input';
-    open_nationality_dropdown = ':nth-child(5) > :nth-child(1) > :nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-select-wrapper > .oxd-select-text > .oxd-select-text--after > .oxd-icon';
+    click_to_close_expiry_calender = '.oxd-layout-context';
+    open_nationality_dropdown = 'label:contains("Nationality")'
     select_specific_nationality = '.oxd-select-option';
-    open_marital_status_dropdown = ':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-select-wrapper > .oxd-select-text > .oxd-select-text--after > .oxd-icon';
+    open_marital_status_dropdown = 'label:contains("Marital Status") + div .oxd-select-text';
     select_specific_marital_status = '.oxd-select-option';
     Add_date_of_birth = ':nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-date-wrapper > .oxd-date-input > .oxd-input';
     select_specific_gender = ':nth-child(1) > :nth-child(2) > .oxd-radio-wrapper > label';
@@ -25,60 +26,60 @@ class PimPage {
 
     moveToPim() {
 
-        cy.get(this.move_to_pim_page).click()
+        cy.get(this.move_to_pim_page).click();
     }
 
     addPimBtn() {
 
-        cy.get(this.click_on_the_add_pim_btn).click()
+        cy.get(this.click_on_the_add_pim_btn).click();
     }
 
     pimFirstName(firstname) {
 
-        cy.get(this.add_pim_first_name).type(firstname)
+        cy.get(this.add_pim_first_name).type(firstname);
     }
 
     pimMiddleName(middlename) {
 
-        cy.get(this.add_pim_middle_name).type(middlename)
+        cy.get(this.add_pim_middle_name).type(middlename);
 
     }
 
     pimLastName(lastname) {
 
-        cy.get(this.add_pim_last_name).type(lastname)
+        cy.get(this.add_pim_last_name).type(lastname);
     }
 
     pimEmployeeId(employeeid) {
 
-        cy.get(this.add_employee_id).type(employeeid)
+        cy.get(this.add_employee_id).type(employeeid);
     }
 
     loginDetailsToggle() {
 
-        cy.get(this.create_login_details_toggle).click()
+        cy.get(this.create_login_details_toggle).click();
     }
 
     pimUsername(pimusername) {
 
-        cy.get(this.add_pim_username).type(pimusername)
+        cy.get(this.add_pim_username).type(pimusername);
     }
 
     pimPassword(pimpassword) {
 
-        cy.get(this.add_pim_password).type(pimpassword)
+        cy.get(this.add_pim_password).type(pimpassword);
     }
 
     pimConfirmPassword(pimconfirmpassword) {
 
-        cy.get(this.add_pim_confirm_password).type(pimconfirmpassword)
+        cy.get(this.add_pim_confirm_password).type(pimconfirmpassword);
 
     }
 
     pimSaveEmployee() {
 
-        cy.get(this.save_pim_employee_btn).click()
-        cy.wait(10000)
+        cy.get(this.save_pim_employee_btn).click();
+        cy.wait(10000);
 
     }
 
@@ -90,45 +91,53 @@ class PimPage {
 
     pimAddLicenseNumber(licensenumber) {
 
-        cy.get(this.add_driver_licence_number).type(licensenumber)
+        cy.get(this.add_driver_licence_number).type(licensenumber);
 
     }
 
     pimLicenseExpiry(licenseexpiry) {
 
-        cy.get(this.add_license_expiry_date).type(licenseexpiry)
+        cy.get(this.add_license_expiry_date).type(licenseexpiry).blur();
+
+    }
+
+    closeExpiryCalander(){
+
+        cy.get(this.click_to_close_expiry_calender).click()
+        cy.wait(2000)
 
     }
 
     pimSelectNationality(selectnationality) {
 
-        cy.get(this.open_nationality_dropdown).eq(0).click()
-        cy.get(this.select_specific_nationality, selectnationality).click()
+        cy.get(this.open_nationality_dropdown).click();
+        cy.get(this.select_specific_nationality).should('be.visible');
+        cy.contains(this.select_specific_nationality, selectnationality).click();
 
     }
 
     pimSelectMaritalStatus(maritalstatus) {
 
-        cy.get(this.open_marital_status_dropdown).eq(0).click()
-        cy.get(this.select_specific_marital_status, maritalstatus).click()
+        cy.get(this.open_marital_status_dropdown).click();
+        cy.contains(this.select_specific_marital_status, maritalstatus).click();
 
     }
 
     pimAddDateOfBirth(dateofbirth) {
 
-        cy.get(this.Add_date_of_birth).type(dateofbirth)
+        cy.get(this.Add_date_of_birth).type(dateofbirth);
 
     }
 
     pimSelectGender() {
 
-        cy.get(this.select_specific_gender).click()
+        cy.get(this.select_specific_gender).click();
 
     }
 
     pimSavePersonalInfo() {
 
-        cy.get(this.save_the_personal_info).click()
+        cy.get(this.save_the_personal_info).click();
 
     }
 
@@ -146,7 +155,8 @@ class PimPage {
         this.pimAddOtherId(otherid);
         this.pimAddLicenseNumber(licensenumber);
         this.pimLicenseExpiry(licenseexpiry);
-        this.pimSelectNationality('Pakistani')
+        this.closeExpiryCalander();
+        this.pimSelectNationality('Pakistani');
         this.pimSelectMaritalStatus('Single');
         this.pimAddDateOfBirth(dateofbirth);
         this.pimSelectGender();
