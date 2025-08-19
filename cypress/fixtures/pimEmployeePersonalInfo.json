@@ -3,12 +3,15 @@
     "middlename": "Abdullah",
     "lastname": "Ashfaq",
     "employeeid": "4597",
-    "pimusername": "abdullahashfaq87",
+    "pimusername": "abdullahashfaq652",
     "pimpassword": "Abdul@123",
     "pimconfirmpassword": "Abdul@123",
     "otherid": "1255",
     "licensenumber": "89236511782393",
     "licenseexpiry": "2027-08-10",
-    "dateofbirth": "1995-10-12"
+    "employeessnnumber" : "463464",
+    "employeesinnumber" : "61365",
+    "dateofbirth": "1995-10-12",
+    "customtestfield": "This is just for testing purpose"
 
 }

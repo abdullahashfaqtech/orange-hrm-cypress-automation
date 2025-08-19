@@ -1,4 +1,4 @@
-class PimPage {
+class PimPagePersonalDetails {
 
     move_to_pim_page = ':nth-child(2) > .oxd-main-menu-item';
     click_on_the_add_pim_btn = '.orangehrm-header-container > .oxd-button';
@@ -15,13 +15,18 @@ class PimPage {
     add_driver_licence_number = ':nth-child(2) > :nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-input';
     add_license_expiry_date = ':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-date-wrapper > .oxd-date-input > .oxd-input';
     click_to_close_expiry_calender = '.oxd-layout-context';
-    open_nationality_dropdown = 'label:contains("Nationality")'
-    select_specific_nationality = '.oxd-select-option';
-    open_marital_status_dropdown = 'label:contains("Marital Status") + div .oxd-select-text';
-    select_specific_marital_status = '.oxd-select-option';
+    add_employee_ssn_number = '.oxd-form > :nth-child(3) > :nth-child(3) > :nth-child(1)';
+    add_employee_sin_number = ':nth-child(3) > :nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input';
+    // open_nationality_dropdown = 'label:contains("Nationality")'
+    // select_specific_nationality = '.oxd-select-option';
+    // open_marital_status_dropdown = 'label:contains("Marital Status") + div .oxd-select-text';
+    // select_specific_marital_status = '.oxd-select-option';
     Add_date_of_birth = ':nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-date-wrapper > .oxd-date-input > .oxd-input';
     select_specific_gender = ':nth-child(1) > :nth-child(2) > .oxd-radio-wrapper > label';
     save_the_personal_info = ':nth-child(1) > .oxd-form > .oxd-form-actions > .oxd-button';
+    add_text_to_custom_field = '.orangehrm-card-container > .oxd-form > .oxd-form-row > .oxd-grid-3 > :nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input';
+    save_the_custom_details = '.orangehrm-card-container > .oxd-form > .oxd-form-actions > .oxd-button'
+
 
 
     moveToPim() {
@@ -101,25 +106,59 @@ class PimPage {
 
     }
 
-    closeExpiryCalander(){
+    closeExpiryCalander() {
 
         cy.get(this.click_to_close_expiry_calender).click()
         cy.wait(2000)
 
     }
 
-    pimSelectNationality(selectnationality) {
+    pimAddSsnNumber(employeessnnumber){
 
-        cy.get(this.open_nationality_dropdown).click();
-        cy.get(this.select_specific_nationality).should('be.visible');
-        cy.contains(this.select_specific_nationality, selectnationality).click();
+        cy.get(this.add_employee_ssn_number).type(employeessnnumber);
 
     }
 
+    pimAddSinNumber(employeesinnumber){
+
+        cy.get(this.add_employee_sin_number).type(employeesinnumber);
+        
+    }
+
+    // pimSelectNationality(selectnationality) {
+
+    //     cy.get(this.open_nationality_dropdown).click();
+    //     // cy.get(this.select_specific_nationality).should('be.visible');
+    //     cy.contains(this.select_specific_nationality, selectnationality).click();
+
+    // }
+
+    pimSelectNationality(selectnationality) {
+        // Open the dropdown
+        cy.contains('label', 'Nationality')
+            .parents('.oxd-input-group')
+            .find('.oxd-select-text')
+            .click();
+
+        // Ensure dropdown options are visible
+        cy.get('.oxd-select-dropdown').should('be.visible');
+
+        // Select option
+        cy.contains('.oxd-select-option', selectnationality).click();
+    }
+
+
     pimSelectMaritalStatus(maritalstatus) {
 
-        cy.get(this.open_marital_status_dropdown).click();
-        cy.contains(this.select_specific_marital_status, maritalstatus).click();
+        cy.contains('label', 'Marital Status')
+
+            .parents('.oxd-input-group')
+            .find('.oxd-select-text')
+            .click();
+
+        cy.get('.oxd-select-dropdown').should('be.visible');
+        cy.contains('.oxd-select-option', maritalstatus).click();
+
 
     }
 
@@ -141,7 +180,33 @@ class PimPage {
 
     }
 
-    createPimEmployee(firstname, middlename, lastname, employeeid, pimusername, pimpassword, pimconfirmpassword, otherid, licensenumber, licenseexpiry, dateofbirth) {
+    pimAddBloodType(bloodtype){
+
+        cy.contains('label', 'Blood Type')
+         
+           .parents('.oxd-input-group')
+           .find('.oxd-select-text')
+           .click();
+
+        cy.get('.oxd-select-dropdown').should('be.visible');
+        cy.contains('.oxd-select-option', bloodtype).click();
+
+    }
+
+    pimAddTextTestField(customtestfield){
+
+        cy.get(this.add_text_to_custom_field).type(customtestfield)
+
+    }
+
+    pimSaveCustomFields(){
+
+        cy.get(this.save_the_custom_details).click()
+    }
+
+
+
+    createPimEmployeePersonal(firstname, middlename, lastname, employeeid, pimusername, pimpassword, pimconfirmpassword, otherid, licensenumber, licenseexpiry, dateofbirth, customtestfield) {
 
         this.pimFirstName(firstname);
         this.pimMiddleName(middlename);
@@ -160,9 +225,13 @@ class PimPage {
         this.pimSelectMaritalStatus('Single');
         this.pimAddDateOfBirth(dateofbirth);
         this.pimSelectGender();
-    
+        this.pimSavePersonalInfo();
+        this.pimAddBloodType('A+');
+        this.pimAddTextTestField(customtestfield);
+        this.pimSaveCustomFields();
+
     }
 
 }
 
-export default PimPage
+export default PimPagePersonalDetails

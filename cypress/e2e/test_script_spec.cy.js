@@ -1,12 +1,14 @@
 import Loginpage from "./pom_pages/LoginPage.cy";
 import addEmployee from "./pom_pages/adminPage.cy";
-import PimPage from "./pom_pages/pimPage.cy";
+import PimPagePersonalDetails from "./pom_pages/PimPagePersonal.cy";
+import PimPageContactDetails from "./pom_pages/PimPageContact.cy";
 
 describe('Orange HRM Complete Automation', () => {
 
     const var_Login_Page = new Loginpage();
     const var_move_admin_tab = new addEmployee();
-    const var_add_employee_on_pim_page = new PimPage();
+    const var_pim_page_personal_details = new PimPagePersonalDetails();
+    const var_add_pim_page_contact_details = new PimPageContactDetails();
 
     beforeEach(() => {
         cy.fixture('credentials').then((data) => {
@@ -35,12 +37,12 @@ describe('Orange HRM Complete Automation', () => {
 
     it.only("Add Employee Profile on Pim Page", () => {
 
-        var_add_employee_on_pim_page.moveToPim()
-        var_add_employee_on_pim_page.addPimBtn()
-        cy.fixture('pimEmployeeInfo').then((data) => {
+        var_pim_page_personal_details.moveToPim()
+        var_pim_page_personal_details.addPimBtn()
+        cy.fixture('pimEmployeePersonalInfo').then((data) => {
 
             cy.log(JSON.stringify(data));
-            var_add_employee_on_pim_page.createPimEmployee(
+            var_pim_page_personal_details.createPimEmployeePersonal(
 
                 data.firstname,
                 data.middlename,
@@ -52,11 +54,20 @@ describe('Orange HRM Complete Automation', () => {
                 data.otherid,
                 data.licensenumber,
                 data.licenseexpiry,
-                data.dateofbirth
+                data.dateofbirth,
+                data.customtestfield
             )
+
+            cy.fixture('pimEmployeeContactInfo').then((data) => {
+
+                cy.log(JSON.stringify(data));
+                var_add_pim_page_contact_details.createPimEmployeeContact()
+
+
+            })
         })
 
-      
+
 
     })
 
