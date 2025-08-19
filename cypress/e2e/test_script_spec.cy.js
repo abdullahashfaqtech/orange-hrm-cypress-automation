@@ -11,6 +11,7 @@ describe('Orange HRM Complete Automation', () => {
     const var_add_pim_page_contact_details = new PimPageContactDetails();
 
     beforeEach(() => {
+
         cy.fixture('credentials').then((data) => {
             cy.visit('/');
             var_Login_Page.login(data.username, data.password);
@@ -61,7 +62,20 @@ describe('Orange HRM Complete Automation', () => {
             cy.fixture('pimEmployeeContactInfo').then((data) => {
 
                 cy.log(JSON.stringify(data));
-                var_add_pim_page_contact_details.createPimEmployeeContact()
+                var_add_pim_page_contact_details.createPimEmployeeContact(
+
+                    data.empaddress1,
+                    data.empaddress2,
+                    data.empcity,
+                    data.empprovince,
+                    data.emppostalcode,
+                    data.emphomephone,
+                    data.empmobilephone,
+                    data.empworkphone,
+                    data.empworkemail,
+                    data.empotheremail
+
+                )
 
 
             })
