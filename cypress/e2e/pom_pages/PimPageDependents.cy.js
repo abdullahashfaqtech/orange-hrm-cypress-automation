@@ -28,12 +28,15 @@ class PimPageDependentsDetails {
 
         cy.contains('label', 'Relationship')
 
-            .parents('.oxd-input-group')
+            .closest('.oxd-input-group')
             .find('.oxd-select-text')
             .click();
 
         cy.get('.oxd-select-dropdown').should('be.visible');
-        cy.contains('.oxd-select-option', dependentsrelationship).click();
+        cy.contains('.oxd-select-option', dependentsrelationship, { matchCase: false })
+            .scrollIntoView()
+            .click({ force: true });
+
     }
 
     pimAddDependentsDateOfBirth(dependentsdateofbirth) {
@@ -48,12 +51,12 @@ class PimPageDependentsDetails {
 
     }
 
-    createPimEmployeeDependents(dependentsname, dependentsdateofbirth) {
+    createPimEmployeeDependents(dependentsname, dependentsrelationship, dependentsdateofbirth) {
 
         this.pimMoveToDependentsTab();
         this.pimClickAddDependentsBtn();
         this.pimAddDependentsName(dependentsname);
-        this.pimAddDependentsRelationship('other');
+        this.pimAddDependentsRelationship(dependentsrelationship);
         this.pimAddDependentsDateOfBirth(dependentsdateofbirth);
         this.pimSaveDependentsInfo();
 
