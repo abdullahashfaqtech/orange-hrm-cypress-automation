@@ -104,8 +104,9 @@ describe('Orange HRM Complete Automation', () => {
                 var_add_pim_page_dependents_details.createPimEmployeeDependents(
 
                     data.dependentsname,
+                    data.dependentsrelationship,
                     data.dependentsdateofbirth
-                    
+
                 )
             })
 

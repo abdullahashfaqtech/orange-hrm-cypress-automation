@@ -1,13 +1,13 @@
 {
-    "empaddress1": "627 L Block",
-    "empaddress2": "LDA",
-    "empcity": "Lahore",
-    "empprovince": "Punjab",
+    "empaddress1": "Street 28",
+    "empaddress2": "Michigan",
+    "empcity": "Rochister",
+    "empprovince": "New Jersy",
     "emppostalcode": "54000",
     "emphomephone": "03157635809",
     "empmobilephone": "03456789567",
     "empworkphone": "03227253478",
-    "empworkemail": "abarkwork@gmail.com",
-    "empotheremail": "abrkother@gmail.com"
+    "empworkemail": "admin@gmail.com",
+    "empotheremail": "admin@gmail.com"
 
 }

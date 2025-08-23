@@ -113,17 +113,17 @@ class PimPagePersonalDetails {
 
     }
 
-    pimAddSsnNumber(employeessnnumber){
+    // pimAddSsnNumber(employeessnnumber){
 
-        cy.get(this.add_employee_ssn_number).type(employeessnnumber);
+    //     cy.get(this.add_employee_ssn_number).type(employeessnnumber);
 
-    }
+    // }
 
-    pimAddSinNumber(employeesinnumber){
+    // pimAddSinNumber(employeesinnumber){
 
-        cy.get(this.add_employee_sin_number).type(employeesinnumber);
-        
-    }
+    //     cy.get(this.add_employee_sin_number).type(employeesinnumber);
+
+    // }
 
     // pimSelectNationality(selectnationality) {
 
@@ -206,7 +206,7 @@ class PimPagePersonalDetails {
 
 
 
-    createPimEmployeePersonal(firstname, middlename, lastname, employeeid, pimusername, pimpassword, pimconfirmpassword, otherid, licensenumber, licenseexpiry, dateofbirth, customtestfield) {
+    createPimEmployeePersonal(firstname, middlename, lastname, employeeid, pimusername, pimpassword, pimconfirmpassword, otherid, licensenumber, licenseexpiry, employeessnnumber, employeesinnumber, dateofbirth, customtestfield) {
 
         this.pimFirstName(firstname);
         this.pimMiddleName(middlename);
@@ -221,6 +221,8 @@ class PimPagePersonalDetails {
         this.pimAddLicenseNumber(licensenumber);
         this.pimLicenseExpiry(licenseexpiry);
         this.closeExpiryCalander();
+        // this.pimAddSsnNumber(employeessnnumber);
+        // this.pimAddSinNumber(employeesinnumber);
         this.pimSelectNationality('Pakistani');
         this.pimSelectMaritalStatus('Single');
         this.pimAddDateOfBirth(dateofbirth);

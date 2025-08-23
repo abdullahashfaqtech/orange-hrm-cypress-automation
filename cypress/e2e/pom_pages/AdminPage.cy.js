@@ -13,10 +13,12 @@ class addEmployee {
     save_new_employee_form = '.oxd-button--secondary'
 
     move_to_admin() {
+
         cy.get(this.mov_to_Aadmin_tab).click()
     }
 
     add_employee_btn() {
+
         cy.get(this.add_employee_button_on_admin_screen).click()
     }
 
@@ -24,6 +26,7 @@ class addEmployee {
 
         cy.get(this.click_user_role_dropdown).eq(0).click()
         cy.contains(this.select_user_option, role).click()
+
     }
 
     enterEmployeeName(employeeName) {
@@ -36,6 +39,7 @@ class addEmployee {
 
         cy.get(this.open_status_dropdown).eq(0).click()
         cy.contains(this.select_user_status, status).click()
+        
     }
 
     enterUserName(empusername) {

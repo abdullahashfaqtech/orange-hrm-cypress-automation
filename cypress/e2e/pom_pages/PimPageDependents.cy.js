@@ -28,7 +28,7 @@ class PimPageDependentsDetails {
 
         cy.contains('label', 'Relationship')
 
-            .closest('.oxd-input-group')
+            .parents('.oxd-input-group')
             .find('.oxd-select-text')
             .click();
 
