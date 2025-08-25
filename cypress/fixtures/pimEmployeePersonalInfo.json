@@ -2,16 +2,16 @@
     "firstname": "Sam",
     "middlename": "Haltman",
     "lastname": "William",
-    "employeeid": "4597",
-    "pimusername": "samhaltmanwilliam01",
+    "employeeid": "48954",
+    "pimusername": "samhaltmanwilliam16",
     "pimpassword": "Samhaltman@6789",
     "pimconfirmpassword": "Samhaltman@6789",
-    "otherid": "6245",
-    "licensenumber": "89236511782393",
-    "licenseexpiry": "2027-08-10",
+    "otherid": "54653",
+    "emplicensenumber": "456586656",
+    "emplicenseexpiry": "2028-08-10",
     "employeessnnumber" : "463464",
     "employeesinnumber" : "61365",
-    "dateofbirth": "1995-10-12",
+    "empdateofbirth": "1996-08-10",
     "customtestfield": "This is just for testing purpose"
 
 }

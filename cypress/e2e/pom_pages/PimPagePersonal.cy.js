@@ -94,15 +94,15 @@ class PimPagePersonalDetails {
 
     }
 
-    pimAddLicenseNumber(licensenumber) {
+    pimAddLicenseNumber(emplicensenumber) {
 
-        cy.get(this.add_driver_licence_number).type(licensenumber);
+        cy.get(this.add_driver_licence_number).type(emplicensenumber);
 
     }
 
-    pimLicenseExpiry(licenseexpiry) {
+    pimLicenseExpiry(emplicenseexpiry) {
 
-        cy.get(this.add_license_expiry_date).type(licenseexpiry).blur();
+        cy.get(this.add_license_expiry_date).eq(0).type(emplicenseexpiry).blur();
 
     }
 
@@ -162,9 +162,9 @@ class PimPagePersonalDetails {
 
     }
 
-    pimAddDateOfBirth(dateofbirth) {
+    pimAddDateOfBirth(empdateofbirth) {
 
-        cy.get(this.Add_date_of_birth).type(dateofbirth);
+        cy.get(this.Add_date_of_birth).type(empdateofbirth).blur();
 
     }
 
@@ -206,7 +206,7 @@ class PimPagePersonalDetails {
 
 
 
-    createPimEmployeePersonal(firstname, middlename, lastname, employeeid, pimusername, pimpassword, pimconfirmpassword, otherid, licensenumber, licenseexpiry, employeessnnumber, employeesinnumber, dateofbirth, customtestfield) {
+    createPimEmployeePersonal(firstname, middlename, lastname, employeeid, pimusername, pimpassword, pimconfirmpassword, otherid, emplicensenumber, emplicenseexpiry, employeessnnumber, employeesinnumber, empdateofbirth, customtestfield) {
 
         this.pimFirstName(firstname);
         this.pimMiddleName(middlename);
@@ -218,14 +218,14 @@ class PimPagePersonalDetails {
         this.pimConfirmPassword(pimconfirmpassword);
         this.pimSaveEmployee();
         this.pimAddOtherId(otherid);
-        this.pimAddLicenseNumber(licensenumber);
-        this.pimLicenseExpiry(licenseexpiry);
+        this.pimAddLicenseNumber(emplicensenumber);
+        this.pimLicenseExpiry(emplicenseexpiry);
         this.closeExpiryCalander();
         // this.pimAddSsnNumber(employeessnnumber);
         // this.pimAddSinNumber(employeesinnumber);
         this.pimSelectNationality('Pakistani');
         this.pimSelectMaritalStatus('Single');
-        this.pimAddDateOfBirth(dateofbirth);
+        this.pimAddDateOfBirth(empdateofbirth);
         this.pimSelectGender();
         this.pimSavePersonalInfo();
         this.pimAddBloodType('A+');
