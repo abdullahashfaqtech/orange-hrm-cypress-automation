@@ -3,15 +3,15 @@
     "middlename": "Haltman",
     "lastname": "William",
     "employeeid": "48954",
-    "pimusername": "samhaltmanwilliam16",
+    "pimusername": "samhaltmanwilliam20",
     "pimpassword": "Samhaltman@6789",
     "pimconfirmpassword": "Samhaltman@6789",
     "otherid": "54653",
-    "emplicensenumber": "456586656",
-    "emplicenseexpiry": "2028-08-10",
+    "personallicensenumber": "456586656",
+    "personallicenseexpiry": "2028-08-10",
     "employeessnnumber" : "463464",
     "employeesinnumber" : "61365",
-    "empdateofbirth": "1996-08-10",
+    "personaldateofbirth": "1994-08-10",
     "customtestfield": "This is just for testing purpose"
 
 }

@@ -21,7 +21,7 @@ class PimPagePersonalDetails {
     // select_specific_nationality = '.oxd-select-option';
     // open_marital_status_dropdown = 'label:contains("Marital Status") + div .oxd-select-text';
     // select_specific_marital_status = '.oxd-select-option';
-    Add_date_of_birth = ':nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-date-wrapper > .oxd-date-input > .oxd-input';
+    Add_date_of_birth = ':nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-date-wrapper > .oxd-date-input > .oxd-input'
     select_specific_gender = ':nth-child(1) > :nth-child(2) > .oxd-radio-wrapper > label';
     save_the_personal_info = ':nth-child(1) > .oxd-form > .oxd-form-actions > .oxd-button';
     add_text_to_custom_field = '.orangehrm-card-container > .oxd-form > .oxd-form-row > .oxd-grid-3 > :nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input';
@@ -94,15 +94,15 @@ class PimPagePersonalDetails {
 
     }
 
-    pimAddLicenseNumber(emplicensenumber) {
+    pimAddLicenseNumber(personallicensenumber) {
 
-        cy.get(this.add_driver_licence_number).type(emplicensenumber);
+        cy.get(this.add_driver_licence_number).type(personallicensenumber);
 
     }
 
-    pimLicenseExpiry(emplicenseexpiry) {
+    pimLicenseExpiry(personallicenseexpiry) {
 
-        cy.get(this.add_license_expiry_date).eq(0).type(emplicenseexpiry).blur();
+        cy.get(this.add_license_expiry_date).eq(0).type(personallicenseexpiry).blur();
 
     }
 
@@ -162,9 +162,9 @@ class PimPagePersonalDetails {
 
     }
 
-    pimAddDateOfBirth(empdateofbirth) {
+    pimAddDateOfBirth(personaldateofbirth) {
 
-        cy.get(this.Add_date_of_birth).type(empdateofbirth).blur();
+        cy.get(this.Add_date_of_birth).eq(1).type(personaldateofbirth);
 
     }
 
@@ -206,7 +206,7 @@ class PimPagePersonalDetails {
 
 
 
-    createPimEmployeePersonal(firstname, middlename, lastname, employeeid, pimusername, pimpassword, pimconfirmpassword, otherid, emplicensenumber, emplicenseexpiry, employeessnnumber, employeesinnumber, empdateofbirth, customtestfield) {
+    createPimEmployeePersonal(firstname, middlename, lastname, employeeid, pimusername, pimpassword, pimconfirmpassword, otherid, personallicensenumber, personallicenseexpiry, employeessnnumber, employeesinnumber, personaldateofbirth, customtestfield) {
 
         this.pimFirstName(firstname);
         this.pimMiddleName(middlename);
@@ -218,14 +218,14 @@ class PimPagePersonalDetails {
         this.pimConfirmPassword(pimconfirmpassword);
         this.pimSaveEmployee();
         this.pimAddOtherId(otherid);
-        this.pimAddLicenseNumber(emplicensenumber);
-        this.pimLicenseExpiry(emplicenseexpiry);
+        this.pimAddLicenseNumber(personallicensenumber);
+        this.pimLicenseExpiry(personallicenseexpiry);
         this.closeExpiryCalander();
         // this.pimAddSsnNumber(employeessnnumber);
         // this.pimAddSinNumber(employeesinnumber);
         this.pimSelectNationality('Pakistani');
         this.pimSelectMaritalStatus('Single');
-        this.pimAddDateOfBirth(empdateofbirth);
+        this.pimAddDateOfBirth(personaldateofbirth);
         this.pimSelectGender();
         this.pimSavePersonalInfo();
         this.pimAddBloodType('A+');
