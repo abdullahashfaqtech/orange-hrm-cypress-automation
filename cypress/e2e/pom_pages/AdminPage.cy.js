@@ -35,11 +35,11 @@ class addEmployee {
 
     }
 
-    selectEmpStatus(status){
+    selectEmpStatus(status) {
 
         cy.get(this.open_status_dropdown).eq(0).click()
         cy.contains(this.select_user_status, status).click()
-        
+
     }
 
     enterUserName(empusername) {
@@ -48,22 +48,22 @@ class addEmployee {
 
     }
 
-    enterUserPassword(userpassword){
+    enterUserPassword(userpassword) {
 
         cy.get(this.enter_the_user_password).type(userpassword)
     }
 
-    enterConfirmPassword(confirmpassword){
+    enterConfirmPassword(confirmpassword) {
 
         cy.get(this.enter_the_confirm_password).type(confirmpassword)
     }
 
-    clickSaveBtn(){
+    clickSaveBtn() {
 
         cy.get(this.save_new_employee_form).click()
     }
 
-    createEmployee(employeeName, empusername, userpassword, confirmpassword){
+    createEmployee(employeeName, empusername, userpassword, confirmpassword) {
 
 
         this.enterEmployeeName(employeeName)

@@ -5,7 +5,7 @@ class Loginpage {
     loginPage_login_button = '.oxd-button'
 
     enterUsername(username) {
-        
+
         cy.get(this.loginPage_username_textbox).type(username)
     }
 
@@ -18,7 +18,7 @@ class Loginpage {
         cy.get(this.loginPage_login_button).click()
     }
 
-    login(username, password){
+    login(username, password) {
 
         this.enterUsername(username);
         this.enterPassword(password);

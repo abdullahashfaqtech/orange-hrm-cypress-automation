@@ -62,37 +62,37 @@ class PimPageContactDetails {
 
     }
 
-    pimCAddEmployeeHomePhone(emphomephone){
+    pimCAddEmployeeHomePhone(emphomephone) {
 
         cy.get(this.add_employee_home_phone).type(emphomephone)
 
     }
 
-    pimCAddEmployeeMobilePhone(empmobilephone){
+    pimCAddEmployeeMobilePhone(empmobilephone) {
 
         cy.get(this.add_employee_mobile_phone).type(empmobilephone)
 
     }
 
-    pimCAddEmployeeWorkPhone(empworkphone){
+    pimCAddEmployeeWorkPhone(empworkphone) {
 
         cy.get(this.add_employee_work_phone).type(empworkphone)
 
     }
 
-    pimCAddEmployeeWorkEmail(empworkemail){
+    pimCAddEmployeeWorkEmail(empworkemail) {
 
         cy.get(this.add_employee_work_email).type(empworkemail)
 
     }
 
-    pimCAddEmployeeOtherEmail(empotheremail){
+    pimCAddEmployeeOtherEmail(empotheremail) {
 
         cy.get(this.add_employee_other_email).type(empotheremail)
 
     }
 
-    pimCSaveTheContactInfo(){
+    pimCSaveTheContactInfo() {
 
         cy.get(this.save_the_contact_info).click();
     }

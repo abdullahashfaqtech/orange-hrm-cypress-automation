@@ -1,5 +1,5 @@
 import Loginpage from "./pom_pages/LoginPage.cy";
-import addEmployee from "./pom_pages/adminPage.cy";
+import addEmployee from "./pom_pages/AdminPage.cy";
 import PimPagePersonalDetails from "./pom_pages/PimPagePersonal.cy";
 import PimPageContactDetails from "./pom_pages/PimPageContact.cy";
 import PimPageEmergencyDetails from "./pom_pages/PimPageEmergency.cy";

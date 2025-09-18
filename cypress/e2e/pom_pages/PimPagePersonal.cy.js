@@ -163,10 +163,13 @@ class PimPagePersonalDetails {
     }
 
     pimAddDateOfBirth(personaldateofbirth) {
-
-        cy.get(this.Add_date_of_birth).eq(1).type(personaldateofbirth);
-
+        cy.get(this.Add_date_of_birth)
+            // .eq(1)
+            .clear()
+            .type(personaldateofbirth, { force: true })
+            .blur();
     }
+
 
     pimSelectGender() {
 
@@ -180,26 +183,26 @@ class PimPagePersonalDetails {
 
     }
 
-    pimAddBloodType(bloodtype){
+    pimAddBloodType(bloodtype) {
 
         cy.contains('label', 'Blood Type')
-         
-           .parents('.oxd-input-group')
-           .find('.oxd-select-text')
-           .click();
+
+            .parents('.oxd-input-group')
+            .find('.oxd-select-text')
+            .click();
 
         cy.get('.oxd-select-dropdown').should('be.visible');
         cy.contains('.oxd-select-option', bloodtype).click();
 
     }
 
-    pimAddTextTestField(customtestfield){
+    pimAddTextTestField(customtestfield) {
 
         cy.get(this.add_text_to_custom_field).type(customtestfield)
 
     }
 
-    pimSaveCustomFields(){
+    pimSaveCustomFields() {
 
         cy.get(this.save_the_custom_details).click()
     }

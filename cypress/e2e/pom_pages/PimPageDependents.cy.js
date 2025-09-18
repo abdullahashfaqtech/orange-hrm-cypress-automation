@@ -1,4 +1,5 @@
 class PimPageDependentsDetails {
+    
 
     move_to_dependents_tab = ':nth-child(4) > .orangehrm-tabs-item';
     click_add_dependents_btn = ':nth-child(1) > .orangehrm-action-header > .oxd-button';

@@ -1,9 +1,9 @@
 {
-    "firstname": "Sam",
-    "middlename": "Haltman",
-    "lastname": "William",
+    "firstname": "Weber",
+    "middlename": "Conan",
+    "lastname": "Bricks",
     "employeeid": "48954",
-    "pimusername": "samhaltmanwilliam20",
+    "pimusername": "samhaltmanwilliam26",
     "pimpassword": "Samhaltman@6789",
     "pimconfirmpassword": "Samhaltman@6789",
     "otherid": "54653",
@@ -11,7 +11,7 @@
     "personallicenseexpiry": "2028-08-10",
     "employeessnnumber" : "463464",
     "employeesinnumber" : "61365",
-    "personaldateofbirth": "1994-08-10",
+    "personaldateofbirth": "1996-02-12",
     "customtestfield": "This is just for testing purpose"
 
 }
