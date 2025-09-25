@@ -59,8 +59,8 @@ describe('Orange HRM Complete Automation', () => {
                 data.otherid,
                 data.personallicensenumber,
                 data.personallicenseexpiry,
-                data.personaldateofbirth,
-                data.customtestfield
+                // data.personaldateofbirth,
+                data.personalcustomtestfield
             )
 
             cy.fixture('pimEmployeeContactInfo').then((data) => {
