@@ -88,15 +88,15 @@ class PimPagePersonalDetails {
 
     }
 
-    pimAddOtherId(otherid) {
+    pimAddOtherId(personalotherid) {
 
-        cy.get(this.add_other_id).should('be.visible').type(otherid);
+        cy.get(this.add_other_id).type(personalotherid);
 
     }
 
-    pimAddLicenseNumber(personallicensenumber) {
+    pimAddLicenseNumber(personaldriverlicensenumber) {
 
-        cy.get(this.add_driver_licence_number).type(personallicensenumber);
+        cy.get(this.add_driver_licence_number).type(personaldriverlicensenumber);
 
     }
 
@@ -209,7 +209,7 @@ class PimPagePersonalDetails {
 
 
 
-    createPimEmployeePersonal(firstname, middlename, lastname, employeeid, pimusername, pimpassword, pimconfirmpassword, otherid, personallicensenumber, personallicenseexpiry, employeessnnumber, employeesinnumber, personaldateofbirth, personalcustomtestfield) {
+    createPimEmployeePersonal(firstname, middlename, lastname, employeeid, pimusername, pimpassword, pimconfirmpassword, personalotherid, personaldriverlicensenumber, personallicenseexpiry, employeessnnumber, employeesinnumber, personaldateofbirth, personalcustomtestfield) {
 
         this.pimFirstName(firstname);
         this.pimMiddleName(middlename);
@@ -220,8 +220,8 @@ class PimPagePersonalDetails {
         this.pimPassword(pimpassword);
         this.pimConfirmPassword(pimconfirmpassword);
         this.pimSaveEmployee();
-        this.pimAddOtherId(otherid);
-        this.pimAddLicenseNumber(personallicensenumber);
+        this.pimAddOtherId(personalotherid);
+        this.pimAddLicenseNumber(personaldriverlicensenumber);
         this.pimLicenseExpiry(personallicenseexpiry);
         this.closeExpiryCalander();
         // this.pimAddSsnNumber(employeessnnumber);

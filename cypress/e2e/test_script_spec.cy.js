@@ -56,8 +56,8 @@ describe('Orange HRM Complete Automation', () => {
                 data.pimusername,
                 data.pimpassword,
                 data.pimconfirmpassword,
-                data.otherid,
-                data.personallicensenumber,
+                data.personalotherid,
+                data.personaldriverlicensenumber,
                 data.personallicenseexpiry,
                 // data.personaldateofbirth,
                 data.personalcustomtestfield

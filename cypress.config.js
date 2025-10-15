@@ -5,7 +5,7 @@ module.exports = defineConfig({
 
     baseUrl: "https://opensource-demo.orangehrmlive.com/",
     watchForFileChanges: false,
-    defaultCommandTimeout: 6000,
+    defaultCommandTimeout: 5000,
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
