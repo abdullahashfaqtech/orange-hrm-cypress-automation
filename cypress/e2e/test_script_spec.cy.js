@@ -60,7 +60,8 @@ describe('Orange HRM Complete Automation', () => {
                 data.personaldriverlicensenumber,
                 data.personallicenseexpiry,
                 // data.personaldateofbirth,
-                data.personalcustomtestfield
+                // data.personalcustomtestfieldc
+                
             )
 
             cy.fixture('pimEmployeeContactInfo').then((data) => {

@@ -24,7 +24,7 @@ class PimPagePersonalDetails {
     //Add_date_of_birth = ':nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-date-wrapper > .oxd-date-input > .oxd-input'.
     select_specific_gender = ':nth-child(1) > :nth-child(2) > .oxd-radio-wrapper > label';
     save_the_personal_info = ':nth-child(1) > .oxd-form > .oxd-form-actions > .oxd-button';
-    add_text_to_custom_field = '.orangehrm-card-container > .oxd-form > .oxd-form-row > .oxd-grid-3 > :nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input';
+    // add_text_to_custom_field = '.orangehrm-card-container > .oxd-form > .oxd-form-row > .oxd-grid-3 > :nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input'
     save_the_custom_details = '.orangehrm-card-container > .oxd-form > .oxd-form-actions > .oxd-button'
 
 
@@ -196,11 +196,14 @@ class PimPagePersonalDetails {
 
     }
 
-    pimAddTextTestField(personalcustomtestfield) {
+    // pimAddTextTestField(personalcustomtestfield) {
+    //     cy.contains('label', 'Test_Field')
+    //         .parents('div.oxd-input-group')
+    //         .find('input')
+    //         .clear()
+    //         .type(personalcustomtestfield);
+    // }
 
-        cy.get(this.add_text_to_custom_field).type(personalcustomtestfield);
-
-    }
 
     pimSaveCustomFields() {
 
@@ -232,7 +235,7 @@ class PimPagePersonalDetails {
         this.pimSelectGender();
         this.pimSavePersonalInfo();
         this.pimAddBloodType('A+');
-        this.pimAddTextTestField(personalcustomtestfield);
+        // this.pimAddTextTestField(personalcustomtestfield);
         this.pimSaveCustomFields();
 
     }
