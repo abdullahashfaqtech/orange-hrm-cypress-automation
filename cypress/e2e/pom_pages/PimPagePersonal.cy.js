@@ -196,13 +196,13 @@ class PimPagePersonalDetails {
 
     }
 
-    // pimAddTextTestField(personalcustomtestfield) {
-    //     cy.contains('label', 'Test_Field')
-    //         .parents('div.oxd-input-group')
-    //         .find('input')
-    //         .clear()
-    //         .type(personalcustomtestfield);
-    // }
+    pimAddTextTestField(personalcustomtestfield) {
+        cy.contains('label', 'Test_Field')
+            .parents('div.oxd-input-group')
+            .find('input')
+            .clear()
+            .type(personalcustomtestfield);
+    }
 
 
     pimSaveCustomFields() {
@@ -235,7 +235,7 @@ class PimPagePersonalDetails {
         this.pimSelectGender();
         this.pimSavePersonalInfo();
         this.pimAddBloodType('A+');
-        // this.pimAddTextTestField(personalcustomtestfield);
+        this.pimAddTextTestField(personalcustomtestfield);
         this.pimSaveCustomFields();
 
     }

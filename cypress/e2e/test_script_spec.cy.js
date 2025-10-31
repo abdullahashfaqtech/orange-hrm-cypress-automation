@@ -60,7 +60,7 @@ describe('Orange HRM Complete Automation', () => {
                 data.personaldriverlicensenumber,
                 data.personallicenseexpiry,
                 // data.personaldateofbirth,
-                // data.personalcustomtestfieldc
+                data.personalcustomtestfield
                 
             )
 
